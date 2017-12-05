@@ -13,6 +13,8 @@ class AddingNoteViewController: UIViewController {
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteDescription: UITextView!
     
+    var noteReceivingDelegate: NoteReceivable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,15 +25,15 @@ class AddingNoteViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveButtonTouch(_ sender: UIBarButtonItem) {
+        guard let noteTitle = noteTitle.text,
+            let noteDescription = noteDescription.text else { return }
+        
+        if !noteTitle.isEmpty {
+            noteReceivingDelegate?.receiveNote(Note(title: noteTitle, description: noteDescription))
+            navigationController?.popViewController(animated: true)
+        }
     }
-    */
     
     private func setFieldsStyles() {
         noteTitle.layer.borderColor = UIColor.gray.cgColor;
@@ -48,4 +50,8 @@ class AddingNoteViewController: UIViewController {
         noteDescription.endEditing(true)
     }
     
+}
+
+protocol NoteReceivable {
+    func receiveNote(_ note: Note)
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteListViewController: UIViewController, UITableViewDataSource {
+class NoteListViewController: UIViewController, UITableViewDataSource, NoteReceivable {
 
     @IBOutlet weak var noteTable: UITableView!
     
@@ -17,12 +17,9 @@ class NoteListViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Register a cell for returning in the correct type
-        noteTable.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-    // UITableViewDataSource conformance methods
+    // MARK: - UITableViewDataSource conformance methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
@@ -35,4 +32,20 @@ class NoteListViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    // MARK: - NoteReceivable delegate method
+    
+    func receiveNote(_ note: Note) {
+        notes.append(note)
+        noteTable.reloadData()
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToAddingNote" {
+            if let destinationVC = segue.destination as? AddingNoteViewController {
+                destinationVC.noteReceivingDelegate = self
+            }
+        }
+    }
 }

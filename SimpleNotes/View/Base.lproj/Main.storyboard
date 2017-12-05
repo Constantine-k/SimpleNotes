@@ -62,9 +62,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="pzv-tu-1PF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IVZ-eS-du1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="IVZ-eS-du1">
                             <connections>
-                                <segue destination="xud-Ub-RJU" kind="show" id="TBh-cp-fex"/>
+                                <segue destination="xud-Ub-RJU" kind="show" identifier="GoToAddingNote" id="TBh-cp-fex"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="16" y="165" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnO-XU-YPo">
                                 <rect key="frame" x="16" y="232" width="343" height="415"/>
@@ -128,7 +128,11 @@
                         <viewLayoutGuide key="safeArea" id="7b0-7R-bfj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a note" id="MUT-bw-dYZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xuC-G3-G6B"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xuC-G3-G6B">
+                            <connections>
+                                <action selector="saveButtonTouch:" destination="xud-Ub-RJU" id="k9Y-0D-fjt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="noteDescription" destination="UnO-XU-YPo" id="oxq-ZX-i3H"/>
