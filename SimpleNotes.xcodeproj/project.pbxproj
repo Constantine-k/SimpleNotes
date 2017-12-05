@@ -13,6 +13,7 @@
 		B58035CA1FD5985300623E7B /* SimpleNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B58035C81FD5985300623E7B /* SimpleNotes.xcdatamodeld */; };
 		B58035CC1FD5985300623E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58035CB1FD5985300623E7B /* Assets.xcassets */; };
 		B58035CF1FD5985300623E7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58035CD1FD5985300623E7B /* LaunchScreen.storyboard */; };
+		B58035DD1FD6D05F00623E7B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58035DC1FD6D05F00623E7B /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B58035CB1FD5985300623E7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58035CE1FD5985300623E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58035D01FD5985300623E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B58035DC1FD6D05F00623E7B /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				B58035DA1FD5E0B200623E7B /* AppDelegate */,
 				B58035D71FD5E02A00623E7B /* Controller */,
+				B58035DB1FD6CDDD00623E7B /* Model */,
 				B58035D81FD5E07600623E7B /* Resources */,
 				B58035D91FD5E08B00623E7B /* Supporting Files */,
 				B58035D61FD5E02100623E7B /* View */,
@@ -105,6 +108,14 @@
 				B58035C11FD5985300623E7B /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B58035DB1FD6CDDD00623E7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B58035DC1FD6D05F00623E7B /* Note.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58035C41FD5985300623E7B /* NoteListViewController.swift in Sources */,
+				B58035DD1FD6D05F00623E7B /* Note.swift in Sources */,
 				B58035C21FD5985300623E7B /* AppDelegate.swift in Sources */,
 				B58035CA1FD5985300623E7B /* SimpleNotes.xcdatamodeld in Sources */,
 			);
