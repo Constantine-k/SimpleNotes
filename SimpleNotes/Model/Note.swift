@@ -1,5 +1,5 @@
 //
-//  NoteModel.swift
+//  Note.swift
 //  SimpleNotes
 //
 //  Created by Konstantin Konstantinov on 12/5/17.
