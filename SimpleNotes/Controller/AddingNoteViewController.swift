@@ -30,7 +30,7 @@ class AddingNoteViewController: UIViewController {
             let noteDescription = noteDescription.text else { return }
         
         if !noteTitle.isEmpty {
-            noteReceivingDelegate?.receiveNote(Note(title: noteTitle, description: noteDescription))
+            noteReceivingDelegate?.receive(note: Note(title: noteTitle, description: noteDescription))
             navigationController?.popViewController(animated: true)
         }
     }
@@ -53,5 +53,5 @@ class AddingNoteViewController: UIViewController {
 }
 
 protocol NoteReceivable {
-    func receiveNote(_ note: Note)
+    func receive(note: Note)
 }
